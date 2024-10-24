@@ -821,12 +821,12 @@ div#news-slider .owl-next {
 
 
 #section4  h2 {
-  font-size: 70px;
+  font-size: 50px;
   font-family: 'Righteous';
   color: #ffffff;
-  line-height: 1;
+  line-height: 0.5;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 80px;
   margin-bottom: 20px;
 }
 
@@ -1761,8 +1761,202 @@ li.footer-section a:focus p{
 
 
 /* new styling */
-.menu-head{
+.quote{
+  font-size: 30px;
+  font-weight: light;
+  font-style: italic;  
+  font-family: 'Righteous';
+  color: #ffffff;
+  line-height: 1;
   text-align: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+
+}
+.writer{
+  font-size: 15px;
+  font-style: italic;
+  font-family: 'Poppins';
+  color: #d8894d;
+  text-align: center;
+
+}
+
+/* caters section */
+
+.catering-section {
+  padding: 50px 0;
+  text-align: left;
+}
+
+.catering-section .section-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.catering-section .sub-title {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.catering-section .description {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #777;
+}
+
+.catering-section .view-selection-btn {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid #ff9900;
+  padding-bottom: 5px;
+}
+
+.small-image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.small-image-box {
+  flex: 1 1 45%; /* Adjust to make the boxes smaller or larger */
+  margin-bottom: 20px;
   position: relative;
-  top: 80px;
+}
+
+.small-image-box img {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.small-image-box img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Meet the Team Section Styles */
+#meet-the-team {
+  padding: 50px 0;
+}
+
+/* Team Section Heading */
+#meet-the-team .team-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #5b3a29;
+  margin-bottom: 10px;
+}
+
+#meet-the-team .team-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+#meet-the-team .panel {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+#meet-the-team .panel:hover {
+  transform: translateY(-10px);
+}
+
+#meet-the-team h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#meet-the-team h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+#meet-the-team h2 span {
+  font-weight: 700;
+  color: #d8894d;
+}
+
+#meet-the-team p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6em;
+}
+
+#meet-the-team img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#meet-the-team .colorfullPanel {
+  background-color: #f9f9f9;
+  padding: 30px 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#meet-the-team .panel-body {
+  padding: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #meet-the-team img {
+      width: 80px;
+      height: 80px;
+  }
+
+  #meet-the-team h3 {
+      font-size: 20px;
+  }
+
+  #meet-the-team h2 {
+      font-size: 16px;
+  }
+
+  #meet-the-team p {
+      font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  #meet-the-team {
+      padding: 30px 0;
+  }
+  
+  #meet-the-team h3 {
+      font-size: 18px;
+  }
+
+  #meet-the-team h2 {
+      font-size: 14px;
+  }
+
+  #meet-the-team p {
+      font-size: 12px;
+  }
 }
