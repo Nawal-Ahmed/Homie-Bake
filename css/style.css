@@ -88,7 +88,9 @@ ul, li {
 }
 
 
-
+.mt-10{
+  margin-top: 13px;
+}
 
 /*---------------------------------------------*/
 input {
@@ -484,6 +486,9 @@ img.imgback:hover {
   font-weight: bold;
 }
 
+.section-title h2{
+  font-size: 50px;
+}
 
 .post-slide .post-description {
   font-size: 22px;
@@ -1571,7 +1576,7 @@ div#news-slider .owl-next {
 .addess-description span{
   font-size: 15px;
   font-family: "Roboto";
-  color: rgb(248, 176, 0);
+  color: #d8894d;
   font-weight: bold;
   line-height: 1.7;
   text-align: center;
@@ -1620,7 +1625,7 @@ li.address-section .fa{
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border: 2px solid rgb(248, 176, 0);
+  border: 2px solid #d8894d;
   border-radius: 20px;
   width: 40px;
   height: 40px;
@@ -1778,6 +1783,15 @@ li.footer-section a:focus p{
   font-style: italic;
   font-family: 'Poppins';
   color: #d8894d;
+  text-align: center;
+
+}
+
+.writer-white{
+  font-size: 15px;
+  font-style: italic;
+  font-family: 'Poppins';
+  color: #d9d9d9;
   text-align: center;
 
 }
@@ -1959,4 +1973,80 @@ li.footer-section a:focus p{
   #meet-the-team p {
       font-size: 12px;
   }
+}
+
+.about-us-section {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.images-section {
+  display: flex;
+  gap: 20px;
+}
+
+.about-image {
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #5a4036; /* Replace with your brand's color */
+}
+
+.section-title {
+  color: #b58957; /* Adjust to a subtle, complementary accent color */
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.text-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.text-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  color: #333;
+  column-count: 2; /* This creates two columns */
+  column-gap: 20px; /* Space between the columns */
+}
+
+.benefits-list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #5a4036; /* Icon color */
+  break-inside: avoid; /* Prevents items from breaking between columns */
+}
+
+
+.read-more-button {
+  width: 100px;
+  margin-top: 20px;
+  padding: 10px 10px;
+  background-color: #e0a96d; /* Button background color */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.read-more-button:hover {
+  background-color: #c58857; /* Button hover color */
 }
