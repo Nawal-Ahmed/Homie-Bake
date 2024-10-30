@@ -1,9 +1,4 @@
-/*
-Theme Name: Cemre Bakery Theme
-Theme URI: https://bakery.cemreworks.com
-Author: Cemre Tellioğlu Tunçay
-Author URI: https://cemreworks.com
-*/
+
 /*
 * ==========================================
 * GENERAL AND HEADER START
@@ -1109,9 +1104,6 @@ div#news-slider .owl-next {
     margin-top: 50px;
     margin-bottom: 100px;
 }
-
-  
-
   
   .container-contact100 {
     width: 100%;  
@@ -1188,8 +1180,6 @@ div#news-slider .owl-next {
       line-height: 1;
       text-align: center;  
 }
-  
-  
   
   .wrap-input100 {
     width: 100%;
@@ -2050,3 +2040,4 @@ li.footer-section a:focus p{
 .read-more-button:hover {
   background-color: #c58857; /* Button hover color */
 }
+

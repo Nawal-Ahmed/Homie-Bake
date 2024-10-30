@@ -1,0 +1,164 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4e9e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Admin Container */
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    background-color: #8b4513;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #ffb84d;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar button {
+    background: none;
+    color: #8b4513;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e8a24f;
+    transition: background 0.3s;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+    background-color: #e8a24f;
+}
+
+/* Content Area */
+.admin-content {
+    display: flex;
+    min-height: 600px;
+}
+
+.section {
+    display: none;
+    flex: 1;
+    padding: 20px;
+    background-color: #fdf8f4;
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #8b4513;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+/* Form for Adding Products */
+.add-product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-product input,
+.add-product select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #8b4513;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #6a360e;
+}
+
+.delete-btn {
+    background-color: #d9534f;
+}
+
+.confirm-btn {
+    background-color: #5cb85c;
+}
+
+.confirm-btn:hover {
+    background-color: #4cae4c;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f3e2d9;
+}
+
+td {
+    background-color: #ffffff;
+}
+
+.product-img {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+}

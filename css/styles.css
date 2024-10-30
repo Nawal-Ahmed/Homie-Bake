@@ -1,0 +1,122 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4e9e4; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    padding: 20px; 
+}
+
+/* Container and Card */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; 
+}
+
+.form-card {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; 
+}
+
+/* Header Tabs */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #8b4513;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+.tab.active {
+    color: #ffb84d;
+    font-weight: bold;
+    border-bottom: 2px solid #ffb84d;
+}
+
+/* Form Content */
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+h2 {
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #8b4513;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] { 
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #ffb84d;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px; 
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e59a3b;
+}
+
+/* Alternate Action Link */
+.alt-action {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #8b4513;
+    margin-top: 15px; /* Adjusted for more consistent spacing */
+}
+
+.alt-action a {
+    color: #ffb84d;
+    text-decoration: none;
+}

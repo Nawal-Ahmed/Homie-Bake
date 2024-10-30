@@ -94,6 +94,8 @@
     $('.js-scroll-trigger').click(function() {
         $('.navbar-collapse').collapse('hide');
     });
+
+    
     
     // Activate scrollspy to add active class to navbar items on scroll
     // $('body').scrollspy({
@@ -117,4 +119,17 @@ function initMap() {
         document.getElementById('map'), {zoom: 4, center: uluru});
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+    function showLogin() {
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('signupForm').style.display = 'none';
+        document.querySelector('.tab.active').classList.remove('active');
+        document.querySelectorAll('.tab')[0].classList.add('active');
+    }
+
+    function showSignup() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('signupForm').style.display = 'block';
+        document.querySelector('.tab.active').classList.remove('active');
+        document.querySelectorAll('.tab')[1].classList.add('active');
     }
