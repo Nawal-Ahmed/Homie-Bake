@@ -21,7 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
     }
 
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    // Return the total number of items in the cart
+    $totalItems = 0;
+    foreach ($_SESSION['cart'] as $item) {
+        $totalItems += $item['quantity'];
+    }
+
+    echo $totalItems; // Output the total item count to be captured by the JavaScript
     exit;
 }
-?>

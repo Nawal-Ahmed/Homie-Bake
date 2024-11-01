@@ -11,12 +11,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $product_id = $_POST['product_id'];
         $conn->query("DELETE FROM Products WHERE product_id = $product_id");
         exit;
-    } elseif (isset($_FILES['product_image'])&& $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
+    } elseif (isset($_POST['update_order_status']) && isset($_POST['order_id'])) {
+        $order_id = $_POST['order_id'];
+        $new_status = $_POST['new_status'];
+        $stmt = $conn->prepare("UPDATE Orders SET status = ? WHERE order_id = ?");
+        $stmt->bind_param("si", $new_status, $order_id);
+        $stmt->execute();
+        $stmt->close();
+        exit;
+    } elseif (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
         $name = $_POST['product_name'];
         $description = $_POST['product_description'];
         $price = $_POST['product_price'];
         $category = $_POST['product_category'];
-        $image = (file_get_contents($_FILES['product_image']['tmp_name']));
+        $image = file_get_contents($_FILES['product_image']['tmp_name']);
 
         $stmt = $conn->prepare("INSERT INTO Products (product_name, description, price, image_data, category) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("ssdss", $name, $description, $price, $image, $category);
@@ -28,13 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Fetch data
 $product_results = $conn->query("SELECT * FROM Products");
-$order_results = $conn->query("
-    SELECT o.order_id, o.customer_id, o.total_price, o.status, 
-           GROUP_CONCAT(p.product_name SEPARATOR ', ') AS products
-    FROM Orders o
-    JOIN Order_Items oi ON o.order_id = oi.order_id
-    JOIN Products p ON oi.product_id = p.product_id
-    GROUP BY o.order_id");
+$order_results = $conn->query(
+    "SELECT o.order_id, c.name AS customer_name, o.total_price, o.status, 
+            GROUP_CONCAT(p.product_name SEPARATOR ', ') AS products
+     FROM Orders o
+     JOIN Customers c ON o.customer_id = c.customer_id
+     JOIN Order_Items oi ON o.order_id = oi.order_id
+     JOIN Products p ON oi.product_id = p.product_id
+     GROUP BY o.order_id"
+);
 $message_results = $conn->query("SELECT * FROM Feedback");
 ?>
 
@@ -118,20 +128,30 @@ $message_results = $conn->query("SELECT * FROM Feedback");
                         <thead>
                             <tr>
                                 <th>Order ID</th>
-                                <th>Customer ID</th>
+                                <th>Customer Name</th>
                                 <th>Products</th>
                                 <th>Total Price</th>
                                 <th>Status</th>
+                                <th>Change Status</th>
                             </tr>
                         </thead>
                         <tbody id="order-table">
                             <?php while ($order = $order_results->fetch_assoc()): ?>
                                 <tr>
                                     <td><?= $order['order_id'] ?></td>
-                                    <td><?= $order['customer_id'] ?></td>
+                                    <td><?= $order['customer_name'] ?></td>
                                     <td><?= $order['products'] ?></td>
-                                    <td>$<?= $order['total_price'] ?></td>
-                                    <td><button class="btn confirm-btn"><?= $order['status'] === 'confirmed' ? 'Confirmed' : 'Confirm' ?></button></td>
+                                    <td>$<?= number_format($order['total_price'], 2) ?></td>
+                                    <td class="status-<?= strtolower($order['status']) ?>">
+                                        <?= $order['status'] ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <select onchange="updateOrderStatus(<?= $order['order_id'] ?>, this.value)">
+                                            <option value="Pending" <?= $order['status'] === 'Pending' ? 'selected' : '' ?>>Pending</option>
+                                            <option value="Confirmed" <?= $order['status'] === 'Confirmed' ? 'selected' : '' ?>>Confirmed</option>
+                                            <option value="Cancelled" <?= $order['status'] === 'Cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                                        </select>
+                                    </td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
@@ -168,7 +188,16 @@ $message_results = $conn->query("SELECT * FROM Feedback");
     </div>
 
     <script src="admin.js"></script>
-</body>
-</html>
-
-<?php $conn->close(); ?>
+    <script>
+        function updateOrderStatus(orderId, newStatus) {
+            fetch('', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `update_order_status=true&order_id=${orderId}&new_status=${encodeURIComponent(newStatus)}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Order status updated:', data);
+                alert('Order status updated successfully!');
+            });
+        }</script>

@@ -95,4 +95,3 @@ function deleteProduct(button, productId) {
         .catch(error => console.error("Error:", error));
     }
 }
-

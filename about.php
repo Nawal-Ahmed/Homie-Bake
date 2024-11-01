@@ -195,7 +195,7 @@ session_start();
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-body colorfullPanel text-center">
-                        <img src="img/new/5bfb6f_9187ca7d81a740878fcf167282edab65.webp" alt="Team Member 1">
+                        <img src="img/about/profile.png" alt="Team Member 1">
                         <h3>Nawal Ahmed</h3>
                         <h2><span>Head Baker</span></h2>
                         <p>Nawal brings over 10 years of baking experience and a passion for creating unique flavors.</p>
@@ -205,7 +205,7 @@ session_start();
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-body colorfullPanel text-center">
-                        <img src="img/new/5bfb6f_9187ca7d81a740878fcf167282edab65.webp" alt="Team Member 2">
+                        <img src="img/about/profile.png" alt="Team Member 2">
                         <h3>Paras Batool</h3>
                         <h2><span>Pastry Chef</span></h2>
                         <p>Paras’s expertise in pastry makes every dessert a work of art and a burst of flavor.</p>
@@ -215,7 +215,7 @@ session_start();
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-body colorfullPanel text-center">
-                        <img src="img/new/smiley-man-relaxing-outdoors_23-2148739334.avif" alt="Team Member 3">
+                        <img src="img/about/profile.png" alt="Team Member 3">
                         <h3>Hammad Ahmed</h3>
                         <h2><span>Cake Designer</span></h2>
                         <p>Hammad's creativity ensures that each cake is as stunning to look at as it is to eat.</p>

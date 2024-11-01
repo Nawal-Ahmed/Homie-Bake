@@ -119,7 +119,7 @@ session_start();
 
 <!-- Cart Sidebar -->
 <div id="cart-sidebar" class="cart-sidebar">
-    <div class="close-btn" onclick="closeCart()">×</div> <!-- Styled close button -->
+    <div id="close-btn" class="close-btn" >×</div> <!-- Styled close button -->
     <h2 class="cart-heading">Your Cart</h2>
     <div id="cart-items">
         <?php
@@ -138,7 +138,7 @@ session_start();
         }
         ?>
     </div>
-    <button id="checkout-btn" class="checkout-btn" onclick="goToCheckout()">Checkout</button> <!-- Checkout button -->
+    <button id="checkout-btn" class="checkout-btn">Checkout</button> <!-- Checkout button -->
 </div>
 
 
@@ -427,9 +427,9 @@ session_start();
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
-    <script async defer
+    <!-- <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyIMWhs-crjT0yhctbRjfJFq75FlEhSzE&callback=initMap">
-        </script>
+        </script> -->
 </body>
 
 </html>
