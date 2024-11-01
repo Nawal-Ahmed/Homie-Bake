@@ -545,7 +545,33 @@ div#news-slider .owl-prev {
   
 }
 
+.cart-btn {
+  background-color: #d8894d; /* Match theme color */
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 50%; /* Button spans full width */
+  text-align: center;
+  margin-top: -15px; /* Optional: Adjust spacing */
+}
 
+.cart-btn:hover {
+  background-color: #b0703a; /* Slightly darker on hover */
+}
+
+/* Additional margin adjustment for consistent spacing */
+.post-slide .post-description {
+  padding-bottom: 15px;
+}
+
+.post-slide .cart-btn {
+  margin-left: 90px;
+  margin-bottom: 20px;
+}
 
 
 div#news-slider .owl-next {
@@ -2040,4 +2066,5 @@ li.footer-section a:focus p{
 .read-more-button:hover {
   background-color: #c58857; /* Button hover color */
 }
+
 

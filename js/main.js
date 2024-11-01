@@ -133,3 +133,5 @@ function initMap() {
         document.querySelector('.tab.active').classList.remove('active');
         document.querySelectorAll('.tab')[1].classList.add('active');
     }
+
+    
